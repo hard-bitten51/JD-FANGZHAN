@@ -1,0 +1,33 @@
+html {
+  font-size: 26.66667vw;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* 去掉a等标签能够点击的标签的高亮背景色 移动端特殊的（按住才会触发） */
+  -webkit-tap-highlight-color: transparent;
+  outline: 0;
+}
+body {
+  font-size: 0.14rem;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #666;
+}
+img {
+  vertical-align: middle;
+}
+input {
+  border: 0;
+  outline: 0;
+}
+.clearfix::before {
+  content: "";
+  display: block;
+  clear: both;
+}

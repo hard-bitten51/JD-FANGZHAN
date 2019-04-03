@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 头部容器 */
+#header{
+    display: flex;
+    background-color: #ccc;
+}
+
+/* 设计稿也是两倍 但是css像素参照是视口 在设计稿2倍基础上全部/2*/
+#header .left {
+    width: 80px;
+    height: 40px;
+    /* 利用伸缩布局给left设置他里面的子元素弹性布局居中 */
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+#header .left .icon-logo {
+    width: 60px;
+    height: 23px;
+    /* 背景图也缩小一半 */
+    background-image: url(../images/sprites.png);
+}

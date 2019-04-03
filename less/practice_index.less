@@ -1,0 +1,265 @@
+@import 'base.less';
+
+html{
+	//font-size:100px;
+	//font-size:100/375 * 100vw;
+	font-size:26.66667vw;
+    }
+//头部容器
+#header{
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    display: flex;
+
+    // background-color: #ccc;
+
+    //左侧
+    .left{
+        width: 0.8rem;
+        height: 0.4rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .icon-logo{
+            /* display: block; */
+            width: 0.6rem;
+            height: 0.23rem;
+            /* 使用背景图也要缩小1半  */
+            // background-image: url(../images/sprites.png);
+            /* 默认400*400  把整个原图缩小*/
+            // background-size: 2rem 2rem;
+            /* 背景图定位要缩小1半 220/2 110px */
+            // background-position: 0 -1.1rem;
+            background: ~"url(../images/sprites.png) 0 -1.1rem / 2rem 2rem" ;
+        }
+    }
+}
+
+.center{
+    flex: 1;
+    form{
+
+        padding: 0.05rem 0;
+        position: relative;
+
+        .icon-search{
+            position: absolute;
+        top: 0.1rem;
+        left: 0.05rem;
+        width: 0.2rem;
+        height: 0.2rem;
+        /* 使用背景图也要缩小1半  */
+        // background-image: url(../images/sprites.png);
+        /* 默认400*400  把整个原图缩小*/
+        // background-size: 2rem 2rem;
+        /* 背景图定位要缩小1半 水平116/2 58px  220/2 110px */
+        // background-position: -0.58rem -1.1rem;
+        /* 把代码包在一个字符串里面 前面跟一个~波浪号 把字符串编译了之后去掉 */
+        background: ~"url(../images/sprites.png)  -0.58rem -1.1rem / 2rem 2rem";      
+    
+        }
+        
+        input{
+            width: 100%;
+            height: 0.3rem;
+            border-radius: 0.15rem;
+            padding-left: 0.3rem;
+        }
+    }
+}
+
+// 右边
+.right{
+    width: 0.5rem;
+    height: 0.4rem;
+    a{
+        display: block;
+        color:#fff;
+        text-align: center;
+        line-height: 0.4rem;
+        text-decoration: none;
+    }
+}
+
+// 轮播图部分
+#slide{
+    img{
+        width: 100%;
+    }
+}
+
+// 导航部分
+#nav {
+    padding: 0.1rem 0;
+    ul{
+        //让Li在一行显示
+        display: flex;
+        //允许换行
+        flex-wrap: wrap;
+        li{
+            width: 25%;
+            a{
+                display: flex;
+                //使竖直排列
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                img{
+                    width: 0.4rem;
+                }
+                p{
+                    margin: 0.05rem 0;
+                }
+            }
+        }
+    }
+}
+// 主体商品区域的样式
+#main {
+    background-color: #eee;
+    padding: 0.1rem;  
+    .seckill{
+        background-color: #fff;
+        .title{
+            display: flex;
+            //给父元素设置两端对齐
+            justify-content: space-between;
+            height: 0.4rem;
+            align-items: center;
+            .left{
+                display: flex;
+                img{
+                    width: 0.2rem;
+                    height: 0.25rem;
+                    margin-left: 0.05rem;
+                }
+                >span{
+                    margin-left: 0.05rem;
+                    color: @main-color;
+                }
+                .downtime{
+                    margin-left: 0.05rem;
+                    span{
+                        width: 0.15rem;
+                        height: 0.15rem;
+                        display: inline-block;
+                        text-align: center;
+                        line-height: 0.15rem;
+                        background-color: #000;
+                        color: #fff;
+                    }
+                }
+            }
+            .right{
+                a{
+                    color: #000;
+                }
+        }
+        
+        }
+        // 秒杀内容
+        .content{
+            ul{
+                display: flex;
+                li{
+                    flex: 1;
+                    a{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        img{
+                            width: 1.1rem;
+                        }
+                        span{
+                            color:@main-color;
+                            font-size: 0.12rem;
+                        }
+                        del{
+                            font-size: 0.12rem;
+                            color:#ccc;
+                        }
+                    }
+                    // &~li{
+                    //     border-left: 0.01rem solid #ccc;
+                    // }
+                }
+            }
+        }
+    }
+}
+// 京东超市
+.market{
+    background-color: #fff;
+    margin-top: 0.1rem;
+    .title{
+        border-bottom: 0.01rem solid #ccc;
+        h4{
+            padding-left: 0.3rem;
+            line-height: 0.4rem;
+            font-weight: normal;
+            position: relative;
+            // &的含义
+            &::before{
+                content: "";
+                width: 0.04rem;
+                height: 0.16rem;
+                position: absolute;
+                background-color: @main-color;
+                left: 0.2rem;
+                top: 0.12rem;
+            }
+        }
+    }
+    .content{
+        display: flex;
+        .left{
+            flex: 1;
+            a{
+
+                img{
+                    width: 100%;
+                }
+            }
+        }
+        .right{
+            flex: 1;
+
+            a{
+
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+//底部样式部分
+#footer{
+    display: fixed;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    background-color: #fff;
+    ul{
+        display: flex;
+
+        li{
+            flex: 1;
+
+            a{
+                display: block;
+                text-align: center;
+                img{
+                    width: 0.65rem;
+                    height: 0.5rem;
+                }
+            }
+        }
+    }
+}
